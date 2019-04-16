@@ -1,0 +1,16 @@
+@using Microsoft.AspNetCore.Http;
+<nav class="navbar-expand-lg navbar-dark bg-dark">
+    <div class="container" style="text-align: center; padding-top: 15px;">
+        <img class="header-art" src="~/images/top-border-2.png"/>
+        <h1 class="nav-title" style="color: #deb078">Wedding Planner</h1>
+        <img class="header-art" src="~/images/top-border-2.png"/>
+        <br>
+        @{
+            int? UserId = @Context.Session.GetInt32("UserID");
+            if(UserId.ToString().Length > 0)
+            {
+                <a href="logout" style="color: #deb078"> Logout </a>
+            }
+        } 
+    </div>
+</nav>

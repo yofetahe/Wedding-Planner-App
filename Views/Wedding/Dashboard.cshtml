@@ -1,0 +1,40 @@
+@using Microsoft.AspNetCore.Http;
+@model List<Wedding>
+
+<div class="header-title">
+    <p> Welcome to the Wedding Planner </p>
+    <div class="header-link">
+        <a href="NewWedding" class="btn btn-success">New Wedding</a>
+    </div>
+</div>
+
+@foreach (var wedding in @Model)
+{
+    <div class="wedding-event">
+        <img class="brideGroom" src="@wedding.HusbandWifePicture" alt="BrideGroomPic">
+        <p> <a href="WeddingDetail/@wedding.WeddingId"> @wedding.HusbandName & @wedding.WifeName Wedding </a> </p>
+        <p>Date: @wedding.WeddingDate</p>
+        <p>Address: @wedding.Address</p>
+        <p># of Guestes: @wedding.Guests.Count</p>
+        @{
+            int? UserId = @Context.Session.GetInt32("UserID");
+            int createdBy = @wedding.CreatedBy;
+            if(UserId == createdBy){
+                <a href="DeleteWeddingProgram/@wedding.WeddingId">Delete</a>
+            }
+            bool going = false;
+            foreach(var guest in @wedding.Guests)
+            {
+                if(guest.UserId == UserId){
+                    going = true;
+                }
+            }
+            if(going){
+                <a href="DeleteAttendance/@wedding.WeddingId">Un-RSVP</a>
+            }
+            if(!going && UserId != createdBy){
+                <a href="AttendWedding/@wedding.WeddingId">RSVP</a>
+            }
+        }
+    </div>
+}

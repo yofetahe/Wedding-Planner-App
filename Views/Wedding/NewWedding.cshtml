@@ -1,0 +1,37 @@
+@model NewWedding
+
+<div class="header-title">
+    <p> Plan Your Wedding </p>
+    <div class="header-link">
+        <a href="dashboard">Dashboard</a> &nbsp;&nbsp; | &nbsp;&nbsp; New Wedding
+    </div>
+</div>
+
+<form asp-action="NewWedding" asp-controller="Wedding" method="post" class="NewWedding">
+    <div class="form-group">
+        <span asp-validation-for="HusbandName" class="errorMessage"></span>
+        <label asp-for="HusbandName"></label>
+        <input asp-for="HusbandName" class="form-control">
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="WifeName" class="errorMessage"></span>
+        <label asp-for="WifeName"></label>
+        <input asp-for="WifeName" class="form-control">
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="HusbandWifePicture" class="errorMessage"></span>
+        <label asp-for="HusbandWifePicture"></label>
+        <input asp-for="HusbandWifePicture" class="form-control">
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="WeddingDate" class="errorMessage"></span>
+        <label asp-for="WeddingDate"></label>
+        <input asp-for="WeddingDate" class="form-control">
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="Address" class="errorMessage"></span>
+        <label asp-for="Address"></label>
+        <input asp-for="Address" class="form-control">
+    </div>
+    <button class="btn btn-success"> Create </button>
+</form>

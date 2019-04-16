@@ -1,0 +1,35 @@
+@model Wedding
+
+<div class="header-title">
+    <p> Plan Your Wedding </p>
+    <div class="header-link">
+        <a href="/dashboard">Dashboard</a> &nbsp;&nbsp; | &nbsp;&nbsp; Wedding Detail
+    </div>
+</div>
+
+<div class="wedding-event">
+    <div class="bride-groom-pic">
+        <img class="brideGroom" src="@Model.HusbandWifePicture" alt="BrideGroomPic">
+    </div>
+    <div class="wedding-info">
+        <p> @Model.HusbandName & @Model.WifeName Wedding </p>
+        <p>Date: @Model.WeddingDate</p>
+        <p>Address: @Model.Address</p>
+    </div>      
+</div>
+
+<div class="google-map">    
+    <partial name="_GoogleMapApi.cshtml" model="@Model"/>
+</div>
+
+<div class="guests-list">
+    <div class="header-title">
+        Guests List
+    </div>    
+    @foreach(var guest in @Model.Guests)
+    {
+        <div class="guest-name">        
+            <strong>@guest.User.FirstName @guest.User.LastName</strong>
+        </div>
+    }
+</div>

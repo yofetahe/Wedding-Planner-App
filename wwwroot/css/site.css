@@ -1,0 +1,137 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    /* padding-top: 50px; */
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+
+
+
+.header-art{
+    display: inline-block;
+    width: 300px;
+}
+.nav-title{
+    display: inline-block;
+}
+
+nav{
+    margin-bottom: 25px;
+}
+.errorMessage{
+    color: red;
+    display: block;
+}
+
+.left-side, .right-side{
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+}
+.middle-separator{
+    display: inline-block;
+    width: 9%;
+}
+
+.navigation-link{
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+button.btn-success, a.btn-success{
+    background-color: #deb078;
+    border-color: #deb078;
+}
+
+.header-title>p{
+    font-size: 20px;
+    display: inline-block;
+    width: 49.5%;
+}
+.header-link{
+    display: inline-block;
+    width: 49.5%;
+    text-align: right;
+}
+form.NewWedding{
+    width: 40%;
+}
+
+img.brideGroom{
+    width: 150px;
+    height: auto;
+}
+
+.wedding-event{
+    display: inline-block;
+    width: 24.5%;
+    min-height: 460px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px 1px #c9c9c9;
+    padding: 15px;
+    text-align: center;
+    vertical-align: top;
+    margin-bottom: 3px;
+}
+
+.bride-groom-pic{
+    display: inline-block;
+    vertical-align: top;
+}
+.wedding-info{
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 15px;
+}
+
+.guests-list{
+    /* width: 40%; */
+    padding-top: 20px;
+}
+.guest-name{
+    display: inline-block;
+    padding: 20px;
+    border: 1px solid #cfcfcf;
+    background-color: #dddddd;
+    margin: 0px 5px 5px 0px;
+}
+
+.google-map{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+}
